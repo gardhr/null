@@ -102,7 +102,7 @@ int main()
 }
 ```
 ## Safety
-Obviously, working with null references (or at least what effectively act as such) means that you MUST ALWAYS test any variable that might possibly be null before manipulating it. This is really no different from the caveats of using ordinary pointers, so it almost goes without saying...but there you have it.
+Obviously, working with null references (or at least what effectively act as such) means that you MUST ALWAYS test any variable that might possibly be invalid before manipulating it. This is really no different from the caveats of using ordinary pointers, so it almost goes without saying...but there you have it.
 ## License
 <img align="right" src="http://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png">
 
