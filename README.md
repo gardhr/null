@@ -14,7 +14,7 @@ A compact null-reference library for C++
 ## Motivation
 As C++ doesn't directly support any notion of null references, the `null` library provides a very simple interface to allow the use of just such an idiom safely. It can be used as a drop-in replacement wherever NULL is used in your programs too.
 ## Portability
-The null-reference library works with any C++ compiler (even older ones). It has no dependancies, so it can even be used in stand-alone (eg: embedded) environments where no standard header files are available. The library itself is by default declared in an anonymous namespace, but if `null` and/or `null_t` are already defined in your project a custom namespace can be specified with a simple #define directive, as described [here](#defining-a-custom-namespace-for-the-library).
+The null-reference library works with any C++ compiler (even older ones). It has no dependancies, so it can also be used in stand-alone (eg: embedded) environments where no standard header files are available. The library itself is by default declared in an anonymous namespace, but if `null` and/or `null_t` are already defined in your project, a custom namespace can be specified with a simple #define directive, as described [here](#defining-a-custom-namespace-for-the-library).
 ## Usage
 Simply include either the `null.hpp` or `null` header in your program and you're ready to go. Note that if you are wrapping the library in a custom namespace then `null.hpp` should be included, as it doesn't import the `null_t` class or global `null` object into the current namespace (whereas the `null` header does). 
 ## Examples
@@ -50,7 +50,7 @@ int main()
 }
 ```
 ### Simplifying code interfaces
-Iterating through a container of objects is a classic example of an instance where one often ends up re-writing boilerplate code, when faced with the conundrum of whether to return a complex iterator, a pointer to the actual data, or perhaps a boolean value with the actual return result passed in to the function. Embracing the null-reference idiom, the tendency to simplify code interfaces becomes much more natural:
+Iterating through a container of objects is a classic example of an instance where one often ends up re-writing boilerplate code, faced with the conundrum of whether to return a complex iterator, a pointer to the actual data, or perhaps a boolean value with the actual return result passed in to the function. Embracing the null-reference idiom, the tendency to simplify code interfaces becomes much more natural:
 ```cpp
 /*
     Some code interface, simplified
