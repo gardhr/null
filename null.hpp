@@ -1,5 +1,5 @@
 /*
-	Copyright (c) 2017 gardhr
+	Copyright (c) 2017, 2018 gardhr
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy
 	of this software and associated documentation files (the "Software"), to deal
@@ -24,10 +24,10 @@
 #ifndef GARDHR_NULL_NAMESPACE
 #define GARDHR_NULL_NAMESPACE
 #endif
-namespace GARDHR_NULL_NAMESPACE 
+namespace GARDHR_NULL_NAMESPACE
 {
 /*
-	Helper template to prevent multiple-translation-unit linker errors 
+	Helper template to prevent multiple-translation-unit linker errors
 */
 template <typename Null_t>
 struct
@@ -39,7 +39,7 @@ struct
 template <typename Null_t>
 Null_t const
 	null_t_safe_static_null<Null_t>::null = Null_t();
-struct 
+struct
 	null_t : null_t_safe_static_null<null_t>
 {
 	template <typename Type>
@@ -57,66 +57,66 @@ struct
 		return address == ((void*)0) || address == &null;
 	}
 	template <typename Type>
-	inline friend bool 
+	inline friend bool
 		operator == (null_t const&, Type& reference)
 	{
 		return invalid(&reference);
 	}
 	template <typename Type>
-	inline friend bool 
+	inline friend bool
 		operator == (Type& reference, null_t const&)
 	{
 		return invalid(&reference);
 	}
 	template <typename Type>
-	inline friend bool 
+	inline friend bool
 		operator != (null_t const&, Type& reference)
 	{
 		return !invalid(&reference);
 	}
 	template <typename Type>
-	inline friend bool 
+	inline friend bool
 		operator != (Type& reference, null_t const&)
 	{
 		return !invalid(&reference);
 	}
 	template <typename Type>
-	inline friend bool 
+	inline friend bool
 		operator == (null_t const&, Type* address)
 	{
 		return invalid(address);
 	}
 	template <typename Type>
-	inline friend bool 
+	inline friend bool
 		operator == (Type* address, null_t const&)
 	{
 		return invalid(address);
 	}
 	template <typename Type>
-	inline friend bool 
+	inline friend bool
 		operator != (null_t const&, Type* address)
 	{
 		return !invalid(address);
 	}
 	template <typename Type>
-	inline friend bool 
+	inline friend bool
 		operator != (Type* address, null_t const&)
 	{
 		return !invalid(address);
 	}
-	inline friend bool 
+	inline friend bool
 		operator == (null_t const&, null_t const&)
 	{
 		return true;
 	}
-	inline friend bool 
+	inline friend bool
 		operator != (null_t const&, null_t const&)
 	{
 		return false;
-	}	
+	}
 };
 /*
-	This is a static variable strictly in the sense that it only 
+	This is a static variable strictly in the sense that it only
 	has internal linkage within any given translation unit.
 */
 static null_t const&
