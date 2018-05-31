@@ -106,4 +106,4 @@ Obviously, working with null references (or at least what effectively act as suc
 ## License
 <img align="right" src="http://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png">
 
-The library is licensed under the [MIT License](http://opensource.org/licenses/MIT)
+This library is released under the [MIT License](http://opensource.org/licenses/MIT)
