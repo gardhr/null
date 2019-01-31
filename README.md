@@ -1,6 +1,6 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/gardhr/null/master/LICENSE.MIT)
 # null
-A compact null-reference library for C++
+Discover the true power of ''null'' with this compact little C++ library!
 
 - [Motivation](#motivation)
 - [Portability](#portability)
@@ -12,11 +12,12 @@ A compact null-reference library for C++
 - [Safety](#safety)
 - [License](#license)
 ## Motivation
-As C++ doesn't directly support any notion of null references, the `null` library provides a very simple interface to allow the use of just such an idiom safely. It can be used as a drop-in replacement wherever NULL is used in your programs too.
+The concept of nullness is a core aspect of any modern programming language for dealing with "empty" values. In C++ unfortuntely this really only applies to pointers. But what about references? By leveraging the power of operater overloading this library supplies just such a functionality. The result speaks for itself. Code interfaces drastically simplified by the so-called ''null reference''. Best of all it can be used as a drop-in replacement wherever NULL is used in your programs too!
+
 ## Portability
-The null-reference library works with any C++ compiler (even older ones). It has no dependancies, so it can also be used in stand-alone (eg: embedded) environments where no standard header files are available. The library itself is by default declared in an anonymous namespace, but if `null` and/or `null_t` are already defined in your project, a custom namespace can be specified with a simple #define directive, as described [here](#defining-a-custom-namespace-for-the-library).
+Works on pretty much any C++ compiler (even the older ones). No dependancies whatsoever. The library itself is by default declared in an anonymous namespace but if `null` and/or `null_t` are already defined in your project a custom namespace can be specified with a simple #define directive, as described [here](#defining-a-custom-namespace-for-the-library).
 ## Usage
-Simply include either the `null.hpp` or `null` header in your program and you're ready to go. Note that if you are wrapping the library in a custom namespace then `null.hpp` should be included, as it doesn't import the `null_t` class or global `null` object into the current namespace (whereas the `null` header does). 
+Simply include either the `null.hpp` or `null` header in your program and you're good to go. Note that if you are wrapping the library in a custom namespace then `null.hpp` should be included as it doesn't import the `null_t` class or global `null` object into the current namespace (whereas the `null` header does). 
 ## Examples
 ### Defining a custom namespace for the library
 If existing identifiers have already been defined for either `null_t` or `null`, then simply place a #define before including the library (being sure to use `null.hpp` (as explained [above](#usage))):
@@ -50,7 +51,7 @@ int main()
 }
 ```
 ### Simplifying code interfaces
-Iterating through a container of objects is a classic example of an instance where one often ends up re-writing boilerplate code, faced with the conundrum of whether to return a complex iterator, a pointer to the actual data, or perhaps a boolean value with the actual return result passed in to the function. Embracing the null-reference idiom, the tendency to simplify code interfaces becomes much more natural:
+Iterating through a container of objects is a classic example of an instance where one often ends up re-writing boilerplate code, faced with the conundrum of whether to return a complex iterator, a pointer to the actual data, etc. Embracing the null-reference idiom, the tendency to simplify code interfaces becomes much more natural:
 ```cpp
 /*
     Some code interface, simplified
@@ -92,17 +93,16 @@ void print(const Type& value)
 
 int main()
 {
-    int integers[] = { 561, 1105, 1729 };
-    vector<string> strings(2, "qux");
-    print(find(integers, 561));
-    print(find(integers, 42));    // null
-    print(find(integers, 1729));
-    print(find<string>(strings, "foo"));    // null
-    print(find<string>(strings, "qux"));
+    int first = 561, second = 1105, third = 1729, nope = 42;
+    int integers[] = { first, second, third };
+    print(find(integers, first));  // 561
+    print(find(integers, second)); // 1105
+    print(find(integers, nope));   // ((null))
+    print(find(integers, third));  // 1729
 }
 ```
 ## Safety
-Obviously, working with null references (or at least what effectively act as such) means that you MUST ALWAYS test any variable that might possibly be invalid before manipulating it. This is really no different from the caveats of using ordinary pointers, so it almost goes without saying...but there you have it.
+The consequence of dereferencing a NULL pointer is essentially the same for null references: sudden and instant program termination. So ALWAYS test any variable that might possibly be invalid (null) before manipulating it. In other words please nullify responsibly. ;)
 ## License
 <img align="right" src="http://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png">
 
