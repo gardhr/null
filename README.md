@@ -12,7 +12,7 @@ Discover the true power of ''null'' with this compact little C++ library!
 - [Safety](#safety)
 - [License](#license)
 ## Motivation
-All modern programming languages support some notion of "nullness". In C++ however that designation really only seems to apply to pointers. Or does it? Well just a bit of operater overloading and we can extend the concept to references! The result speaks for itself: Code interfaces drastically simplified. Best of all it can be used as a drop-in replacement wherever NULL is used in your programs too!
+All modern programming languages support some notion of "nullness". In C++ however that designation really only seems to apply to pointers. Or does it? Well just a bit of operater overloading and we can extend the concept to references! The result speaks for itself: Code interfaces drastically simplified. Best of all it can be used as a drop-in replacement wherever NULL is used in your programs too.
 
 ## Portability
 Compiles with pretty much any C++ compiler (even the older ones) and with no dependancies whatsoever. The library itself is declared by default in an anonymous namespace but if `null` and/or `null_t` are already defined in your project a custom namespace can be specified with a simple #define directive, as described [here](#defining-a-custom-namespace-for-the-library).
@@ -101,7 +101,7 @@ int main()
 }
 ```
 ## Safety
-The consequence of accessing a null reference is essentially the same as dereferencing a NULL pointer: sudden and instant program termination! In other words ALWAYS test any variable that might possibly be invalid (null) before manipulating it. ;)
+The consequence of accessing a null reference is essentially the same as dereferencing a NULL pointer: sudden and instant program termination! And so of course you should ALWAYS test any variable that might possibly be invalid (ie: null) before manipulating it. ;)
 ## License
 <img align="right" src="http://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png">
 
