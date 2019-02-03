@@ -101,7 +101,7 @@ int main()
 }
 ```
 ## Safety
-The consequence of accessing a null reference is essentially the same as dereferencing a NULL pointer: sudden and instant program termination! And so of course you should ALWAYS test any variable that might possibly be invalid (ie: null) before manipulating it. ;)
+The consequence of accessing a null reference is essentially the same as when dereferencing a NULL pointer: sudden and instant program termination! And so of course you should ALWAYS test any variable that might possibly be invalid (ie: null) before manipulating it. ;)
 ## License
 <img align="right" src="http://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png">
 
