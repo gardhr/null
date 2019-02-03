@@ -15,7 +15,7 @@ Discover the true power of ''null'' with this compact little C++ library!
 All modern programming languages support some notion of "nullness". In C++ however that designation really only seems to apply to pointers. Or does it? Well just a bit of operater overloading and we can extend the concept to references! The result speaks for itself: Code interfaces drastically simplified. Best of all it can be used as a drop-in replacement wherever NULL is used in your programs too.
 
 ## Portability
-Compiles with pretty much any C++ compiler (even the older ones) and with no dependancies whatsoever. The library itself is declared by default in an anonymous namespace but if `null` and/or `null_t` are already defined in your project a custom namespace can be specified with a simple #define directive, as described [here](#defining-a-custom-namespace-for-the-library).
+Compiles with pretty much any C++ compiler (even the older ones) and no dependancies whatsoever. The library itself is declared by default in an anonymous namespace but if `null` and/or `null_t` are already defined in your project a custom namespace can be specified with a simple #define directive, as described [here](#defining-a-custom-namespace-for-the-library).
 ## Usage
 Simply include either the `null.hpp` or `null` header in your program and you're good to go. Note that if you are wrapping the library in a custom namespace then `null.hpp` should be included as it doesn't import the `null_t` class or global `null` object into the current namespace (whereas the `null` header does). 
 ## Examples
