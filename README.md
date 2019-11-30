@@ -1,6 +1,7 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/gardhr/null/master/LICENSE.MIT)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/977/badge)](https://bestpractices.coreinfrastructure.org/projects/977)
 # null
-Discover the true power of ''null'' with this compact little C++ library!
+Discover the power of ''null'' with this compact little C++ library!
 
 - [Motivation](#motivation)
 - [Portability](#portability)
