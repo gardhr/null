@@ -1,7 +1,5 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/gardhr/null/master/LICENSE.MIT)
 # null
-Discover the power of ''null'' with this compact little C++ library!
-
 - [Motivation](#motivation)
 - [Portability](#portability)
 - [Usage](#usage)
